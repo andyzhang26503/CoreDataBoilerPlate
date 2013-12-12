@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SportteryInfo" representedClassName="SportteryInfo" syncable="YES">
+        <attribute name="ifWin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="submitDate" attributeType="Date" syncable="YES"/>
+        <attribute name="sumMoney" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 16" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SportteryInfoDetail" inverseName="info" inverseEntity="SportteryInfoDetail" syncable="YES"/>
+    </entity>
+    <entity name="SportteryInfoDetail" representedClassName="SportteryInfoDetail" syncable="YES">
+        <attribute name="a" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="a_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="a_id" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="chooseA" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="chooseD" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="chooseH" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="d" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dare" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="goalline" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="h" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="h_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="h_id" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="l_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="num" attributeType="String" syncable="YES"/>
+        <attribute name="playMethod" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SportteryInfo" inverseName="details" inverseEntity="SportteryInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SportteryInfoDetail" positionX="-45" positionY="-135" width="128" height="313"/>
+        <element name="SportteryInfo" positionX="-281" positionY="-171" width="128" height="118"/>
+    </elements>
+</model>

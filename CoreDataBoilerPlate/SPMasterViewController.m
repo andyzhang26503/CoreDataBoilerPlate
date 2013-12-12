@@ -9,6 +9,8 @@
 #import "SPMasterViewController.h"
 
 #import "SPDetailViewController.h"
+#import "SportteryInfo.h"
+#import "SportteryInfoDetail.h"
 
 @interface SPMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -41,18 +43,56 @@
 {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+//    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    SportteryInfo *sportteryInfo = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    //[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    sportteryInfo.type = @(2);
+    sportteryInfo.sumMoney = @(20);
+    sportteryInfo.submitDate = [NSDate date];
+    sportteryInfo.ifWin = @(NO);
+    
+    SportteryInfoDetail *sportteryDetail = [NSEntityDescription insertNewObjectForEntityForName:@"SportteryInfoDetail" inManagedObjectContext:context];
+    sportteryDetail.playMethod = @(2);
+    sportteryDetail.num = @"周一 002";
+    sportteryDetail.l_cn = @"超级联赛";
+    sportteryDetail.h_cn = @"纽约尼克斯";
+    sportteryDetail.a_cn = @"克里夫兰骑";
+    sportteryDetail.chooseA = @(YES);
+    sportteryDetail.chooseD = @(NO);
+    sportteryDetail.a = @(1.5);
+    sportteryDetail.h = @(1.3);
+    sportteryDetail.goalline = @(3.5);
+    sportteryDetail.dare = @(NO);
+    sportteryDetail.result = @(YES);
+    
+    SportteryInfoDetail *sportteryDetail2 = [NSEntityDescription insertNewObjectForEntityForName:@"SportteryInfoDetail" inManagedObjectContext:context];
+    sportteryDetail2.playMethod = @(5);
+    sportteryDetail2.num = @"周一 003";
+    sportteryDetail2.l_cn = @"超级联赛2";
+    sportteryDetail2.h_cn = @"迈阿密热火";
+    sportteryDetail2.a_cn = @"圣安东尼奥";
+    sportteryDetail2.chooseA = @(YES);
+    sportteryDetail2.chooseD = @(NO);
+    sportteryDetail2.a = @(2.5);
+    sportteryDetail2.h = @(2.3);
+    sportteryDetail2.goalline = @(0);
+    sportteryDetail2.dare = @(NO);
+    sportteryDetail2.result = @(YES);
+    
+    sportteryInfo.details = [NSSet setWithObjects:sportteryDetail,sportteryDetail2, nil];
+    sportteryDetail.info = sportteryInfo;
+    sportteryDetail2.info = sportteryInfo;
     
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
          // Replace this implementation with code to handle the error appropriately.
          // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Unresolved error %@", error.userInfo);
         abort();
     }
 }
@@ -91,26 +131,19 @@
         
         NSError *error = nil;
         if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }   
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // The table view should not be re-orderable.
-    return NO;
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        //NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        SportteryInfo *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setSportteryInfo:object];
     }
 }
 
@@ -124,14 +157,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SportteryInfo" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"submitDate" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -215,8 +248,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+//    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    SportteryInfo *sportteryInfo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", sportteryInfo.type];
 }
 
 @end

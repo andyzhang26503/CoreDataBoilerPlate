@@ -15,7 +15,6 @@
 		502DACD61855C038006F8B21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DACD51855C038006F8B21 /* main.m */; };
 		502DACDA1855C038006F8B21 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DACD91855C038006F8B21 /* SPAppDelegate.m */; };
 		502DACDD1855C038006F8B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502DACDB1855C038006F8B21 /* Main.storyboard */; };
-		502DACE01855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 502DACDE1855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodeld */; };
 		502DACE31855C038006F8B21 /* SPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DACE21855C038006F8B21 /* SPMasterViewController.m */; };
 		502DACE61855C038006F8B21 /* SPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DACE51855C038006F8B21 /* SPDetailViewController.m */; };
 		502DACE81855C038006F8B21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502DACE71855C038006F8B21 /* Images.xcassets */; };
@@ -25,6 +24,9 @@
 		502DACF21855C038006F8B21 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502DACCD1855C038006F8B21 /* CoreData.framework */; };
 		502DACFA1855C038006F8B21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 502DACF81855C038006F8B21 /* InfoPlist.strings */; };
 		502DACFC1855C038006F8B21 /* CoreDataBoilerPlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DACFB1855C038006F8B21 /* CoreDataBoilerPlateTests.m */; };
+		5078774F1856BF86000BB633 /* SportteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5078774E1856BF86000BB633 /* SportteryInfo.m */; };
+		507877521856BFB1000BB633 /* SportteryInfoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 507877511856BFB1000BB633 /* SportteryInfoDetail.m */; };
+		507877551856EFF9000BB633 /* sporttery7.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 507877541856EFF9000BB633 /* sporttery7.xcdatamodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,6 @@
 		502DACD81855C038006F8B21 /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
 		502DACD91855C038006F8B21 /* SPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
 		502DACDC1855C038006F8B21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		502DACDF1855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataBoilerPlate.xcdatamodel; sourceTree = "<group>"; };
 		502DACE11855C038006F8B21 /* SPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMasterViewController.h; sourceTree = "<group>"; };
 		502DACE21855C038006F8B21 /* SPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMasterViewController.m; sourceTree = "<group>"; };
 		502DACE41855C038006F8B21 /* SPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDetailViewController.h; sourceTree = "<group>"; };
@@ -61,6 +62,11 @@
 		502DACF71855C038006F8B21 /* CoreDataBoilerPlateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataBoilerPlateTests-Info.plist"; sourceTree = "<group>"; };
 		502DACF91855C038006F8B21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		502DACFB1855C038006F8B21 /* CoreDataBoilerPlateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataBoilerPlateTests.m; sourceTree = "<group>"; };
+		5078774D1856BF86000BB633 /* SportteryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportteryInfo.h; sourceTree = "<group>"; };
+		5078774E1856BF86000BB633 /* SportteryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportteryInfo.m; sourceTree = "<group>"; };
+		507877501856BFB1000BB633 /* SportteryInfoDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportteryInfoDetail.h; sourceTree = "<group>"; };
+		507877511856BFB1000BB633 /* SportteryInfoDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportteryInfoDetail.m; sourceTree = "<group>"; };
+		507877541856EFF9000BB633 /* sporttery7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sporttery7.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +131,17 @@
 			children = (
 				502DACD81855C038006F8B21 /* SPAppDelegate.h */,
 				502DACD91855C038006F8B21 /* SPAppDelegate.m */,
-				502DACDB1855C038006F8B21 /* Main.storyboard */,
 				502DACE11855C038006F8B21 /* SPMasterViewController.h */,
 				502DACE21855C038006F8B21 /* SPMasterViewController.m */,
 				502DACE41855C038006F8B21 /* SPDetailViewController.h */,
 				502DACE51855C038006F8B21 /* SPDetailViewController.m */,
 				502DACE71855C038006F8B21 /* Images.xcassets */,
-				502DACDE1855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodeld */,
+				502DACDB1855C038006F8B21 /* Main.storyboard */,
+				507877541856EFF9000BB633 /* sporttery7.xcdatamodel */,
+				5078774D1856BF86000BB633 /* SportteryInfo.h */,
+				5078774E1856BF86000BB633 /* SportteryInfo.m */,
+				507877501856BFB1000BB633 /* SportteryInfoDetail.h */,
+				507877511856BFB1000BB633 /* SportteryInfoDetail.m */,
 				502DACD01855C038006F8B21 /* Supporting Files */,
 			);
 			path = CoreDataBoilerPlate;
@@ -264,10 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507877551856EFF9000BB633 /* sporttery7.xcdatamodel in Sources */,
 				502DACE61855C038006F8B21 /* SPDetailViewController.m in Sources */,
+				507877521856BFB1000BB633 /* SportteryInfoDetail.m in Sources */,
+				5078774F1856BF86000BB633 /* SportteryInfo.m in Sources */,
 				502DACD61855C038006F8B21 /* main.m in Sources */,
 				502DACE31855C038006F8B21 /* SPMasterViewController.m in Sources */,
-				502DACE01855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodeld in Sources */,
 				502DACDA1855C038006F8B21 /* SPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +489,7 @@
 				502DAD011855C038006F8B21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		502DAD021855C038006F8B21 /* Build configuration list for PBXNativeTarget "CoreDataBoilerPlateTests" */ = {
 			isa = XCConfigurationList;
@@ -485,21 +498,9 @@
 				502DAD041855C038006F8B21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		502DACDE1855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				502DACDF1855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodel */,
-			);
-			currentVersion = 502DACDF1855C038006F8B21 /* CoreDataBoilerPlate.xcdatamodel */;
-			path = CoreDataBoilerPlate.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 502DACBC1855C038006F8B21 /* Project object */;
 }

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SportteryInfo.h"
 
 @interface SPDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) SportteryInfo *sportteryInfo;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
 @end
